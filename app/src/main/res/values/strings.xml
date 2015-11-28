@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Christmas Photo Effects</string>
+
+    <string name="hint">Pinch to zoom</string>
+</resources>

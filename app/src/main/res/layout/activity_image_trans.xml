@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:gesture-image="http://schemas.polites.com/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rltImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <com.polites.android.GestureImageView
+            android:id="@+id/imvMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerInside"
+            gesture-image:max-scale="10.0"
+            gesture-image:min-scale="1.0" />
+
+        <ImageView
+            android:id="@+id/imvCover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imvMain"
+            android:layout_alignLeft="@+id/imvMain"
+            android:layout_alignRight="@+id/imvMain"
+            android:layout_alignTop="@+id/imvMain" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lnlFooter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:weightSum="3">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lnlSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg_white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dm_5dp">
+
+                <ImageView
+                    android:layout_width="@dimen/ac_imv_size"
+                    android:layout_height="@dimen/ac_imv_size"
+                    android:src="@drawable/save" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Save"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/txt_15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lnlRotate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg_white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dm_5dp">
+
+                <ImageView
+                    android:layout_width="@dimen/ac_imv_size"
+                    android:layout_height="@dimen/ac_imv_size"
+                    android:src="@drawable/rotate" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Rotate"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/txt_15sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/lnlShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_bg_white"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="@dimen/dm_5dp">
+
+                <ImageView
+                    android:layout_width="@dimen/ac_imv_size"
+                    android:layout_height="@dimen/ac_imv_size"
+                    android:src="@drawable/share" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Share"
+                    android:textColor="#ffffff"
+                    android:textSize="@dimen/txt_15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <org.lucasr.twowayview.widget.TwoWayView
+        android:id="@+id/twoWayView"
+        style="@style/TwoWayView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dm_80dp"
+        android:layout_above="@+id/lnlFooter"
+        android:layout_marginBottom="@dimen/dm_20dp"
+        android:background="@color/transparent"
+        android:scrollbars="none"
+        app:twowayview_layoutManager="ListLayoutManager" />
+</RelativeLayout>
