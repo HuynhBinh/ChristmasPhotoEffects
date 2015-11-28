@@ -166,7 +166,6 @@ public class ImageTransActivity extends AppCompatActivity implements View.OnClic
                 imvCover.setImageResource(images.get(position));
                 shapeAdapter.chooseItem(position);
                 filename = null;
-                rltImage.invalidate();
             }
         });
     }
@@ -358,6 +357,7 @@ public class ImageTransActivity extends AppCompatActivity implements View.OnClic
         protected void onPostExecute(Void aVoid) {
             if (bmImvMain != null) {
                 imvMain.setImageBitmap(bmImvMain);
+                filename = null;
             }
             hideProgressDialog();
         }
